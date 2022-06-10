@@ -1,0 +1,13 @@
+<?php
+$router->define([
+    ''=>'Controller/signuppagecontroller.php',
+    'login'=>'Controller/loginpagecontroller.php',
+    'adminpage'=>'Controller/adminpagecontroller.php',
+    'userpage'=>'Controller/userpagecontroller.php',
+    'signupquery'=>'queries/signupquery.php',
+    'loginquery'=>'queries/loginquery.php',
+    'logoutquery'=>'queries/logoutquery.php',
+    'login?info=registered'=>'Controller/loginpagecontroller.php',
+    'login?info=logout'=>'Controller/loginpagecontroller.php'
+]);
+?>
