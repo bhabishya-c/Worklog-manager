@@ -11,7 +11,7 @@ require 'style and responsive/responsive.php';
         <div class="parent">
             <div class="div1"> </div>
             <div class="div2">
-            <h3>Signup</h3>
+            <h3>Add user</h3>
             <p> Please fill these fields to create an account</p>
             <form action="signupquery" method="post">
             <label for="name" class="form-label">Name:</label>
@@ -21,7 +21,9 @@ require 'style and responsive/responsive.php';
                 <label for="password" class="form-label">Password:</label>
                 <input type="password" class="textfield form-control" name="password" placeholder="Password">
                 <label for="role" class="form-label">Role:</label>
-                <input type="text" class="textfield form-control" name="role" placeholder="Role"><br>
+                <input type="text" class="textfield form-control" name="role" placeholder="Role">
+                <label for="department" class="form-label">Department Id:</label>
+                <input type="text" class="textfield form-control" name="department" placeholder="Department id"><br>
                 <button name="submit" class="btn btn-primary">Submit</button>
                 <p>Already a member?<a href="login">Login</a></p>
 </form>

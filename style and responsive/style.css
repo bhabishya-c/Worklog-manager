@@ -16,11 +16,26 @@ body{
     width: 100%;
     }
 
-    .div1 { grid-area: 1 / 1 / 6 / 4;background-color: aqua;background-image: url("");height: auto;width: auto; background-size:cover}
+    .div1 { grid-area: 1 / 1 / 6 / 4;background-image: url("");height: auto;width: auto; background-size:cover}
     .div2 { grid-area: 1 / 4 / 6 / 7; background-color:whitesmoke; padding: 10%;}
     .div3 { grid-area: 1 / 1 / 6 / 4;background-color: aqua;background-image: url("4826435.jpg");height: auto;width: auto; background-size:cover}
 
     .textfield{
         border-radius: 10px;
     }
-   
+    .btnbtn-primary{
+        float:left;
+    }
+    .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        float:right;
+        border-radius:10px;
+      }
