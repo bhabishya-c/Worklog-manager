@@ -3,19 +3,19 @@ session_start();
 class Querybuilder{
     function __construct(protected $connect){
     }
-    function registration($name,$email,$password,$role){
+    function registration(string $name,string $email,string $password,string $role,string $department){
         $preparedemailcheck=$this->connect->prepare("SELECT * FROM userdetails WHERE email='$email'");
         $preparedemailcheck->execute();
         $result=$preparedemailcheck->rowCount();
         if($result>0){
         echo "<script>alert('Email already exists')</script>";
         }else{
-        $preparedregistration=$this->connect->prepare("INSERT INTO userdetails (Name,Email,Password,Role) VALUES ('$name','$email','$password','$role')");
+        $preparedregistration=$this->connect->prepare("INSERT INTO userdetails (Name,Email,Password,Role,dept_id) VALUES ('$name','$email','$password','$role','$department')");
         $preparedregistration->execute();
         header("location:login?info=registered");
         }
     }
-    function userlogin($email,$password){
+    function userlogin(string $email,string $password){
         $preparedlogin=$this->connect->prepare("SELECT * FROM userdetails WHERE email='$email'");
         $preparedlogin->execute();
         $row=$preparedlogin->rowCount();
