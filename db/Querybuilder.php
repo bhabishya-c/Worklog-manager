@@ -12,7 +12,7 @@ class Querybuilder{
         }else{
         $preparedregistration=$this->connect->prepare("INSERT INTO userdetails (Name,Email,Password,Role,dept_id) VALUES ('$name','$email','$password','$role','$department')");
         $preparedregistration->execute();
-        header("location:login?info=registered");
+        header("location:/?info=registered");
         }
     }
     function userlogin(string $email,string $password){
@@ -20,23 +20,43 @@ class Querybuilder{
         $preparedlogin->execute();
         $row=$preparedlogin->rowCount();
         $associatedata=$preparedlogin->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($associatedata);
         if($row>0){
             foreach($associatedata as $a){
             $_SESSION['name']=$a['Name'];
+            $_SESSION['password']=$a['Password'];
+            $_SESSION['id']=$a['id'];
             }
     }else{
         echo"<script>alert('Entered email is wrong')</script>";
-    }foreach($associatedata as $a){
-        if(password_verify($password,$a['Password'])&& $a['Role']=='admin'){
+    }
+       if(password_verify($password,$_SESSION['password'])&& $a['Role']=='admin'){
         header('location:adminpage');
-    }elseif(password_verify($password,$a['Password'])&& $a['Role']=='user'){
+    }elseif(password_verify($password,$_SESSION['password'])&& $a['Role']=='user'){
         header('location:userpage');
     }else{
         echo"<script>alert('Entered password is wrong')</script>";
     }
+}
+function update(int $id,string $username,string $update,$date){
+    $updatepreparedquery=$this->connect->prepare("INSERT INTO dailyupdate (user_id,name,updates,date) VALUES ($id,'$username','$update','$date')");
+    $updatepreparedquery->execute();
+    header("location:userpage?info=inserted");
 
 }
+function adminupdatedisplay(string $table){
+    $prepareddisplay=$this->connect->prepare("SELECT * FROM  {$table}");
+    $prepareddisplay->execute();
+    return $prepareddisplay->fetchAll(PDO::FETCH_ASSOC);
+}
+function userupdatedisplay(int $id){
+    $prepareddisplay=$this->connect->prepare("SELECT * FROM  dailyupdate WHERE user_id=$id");
+    $prepareddisplay->execute();
+    return $prepareddisplay->fetchAll(PDO::FETCH_ASSOC);
+}
+function delete(int $id){
+    $prepareddelete=$this->connect->prepare("DELETE FROM  dailyupdate WHERE user_id=$id");
+    $prepareddelete->execute();
+    header("location:adminpage?info=deleted");
 }
 }
 ?>

@@ -1,5 +1,4 @@
 <?php
-if(isset($_POST['login'])){
     $email=$_POST['email'];
     $password=$_POST['password'];
     if(empty($password) && empty($email)){
@@ -14,6 +13,7 @@ if(isset($_POST['login'])){
     else{
         $login= require 'db/bootstrap.php';
         $login->userlogin($email,$password);
+        
     }
-}
+
 ?>

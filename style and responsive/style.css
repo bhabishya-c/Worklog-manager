@@ -1,7 +1,8 @@
 .container{
-    border-radius: 40px;
+    border-radius: 20px;
     height:auto;
-    width: auto;
+    width: 50%;
+   
 }
 body{
     background-color: white;
@@ -17,7 +18,7 @@ body{
     }
 
     .div1 { grid-area: 1 / 1 / 6 / 4;background-image: url("");height: auto;width: auto; background-size:cover}
-    .div2 { grid-area: 1 / 4 / 6 / 7; background-color:whitesmoke; padding: 10%;}
+    .div2 { grid-area: 1 / 4 / 6 / 7; background-color:whitesmoke; padding: 20px;}
     .div3 { grid-area: 1 / 1 / 6 / 4;background-color: aqua;background-image: url("4826435.jpg");height: auto;width: auto; background-size:cover}
 
     .textfield{
@@ -27,7 +28,7 @@ body{
         float:left;
     }
     .button {
-        background-color: #4CAF50;
+        background-color:black;
         border: none;
         color: white;
         padding: 15px 32px;
@@ -38,4 +39,19 @@ body{
         cursor: pointer;
         float:right;
         border-radius:10px;
+      }
+      h1{
+        font-family:'Chewy', cursive;
+        text-align: center;
+      }
+      .card{
+        width: 50%;
+        border-radius:20px;
+      }
+      .flex-container{
+        display: flex;
+        justify-content: space-around;
+    }
+      textarea{
+        border-radius: 10px;
       }

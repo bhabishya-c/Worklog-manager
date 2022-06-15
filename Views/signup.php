@@ -8,8 +8,7 @@ require 'style and responsive/responsive.php';
   <link  rel="stylesheet" href="style and responsive/style.css">
 </head>
         <body>
-        <div class="parent">
-            <div class="div1"> </div>
+            <div class="container">
             <div class="div2">
             <h3>Add user</h3>
             <p> Please fill these fields to create an account</p>
@@ -21,11 +20,21 @@ require 'style and responsive/responsive.php';
                 <label for="password" class="form-label">Password:</label>
                 <input type="password" class="textfield form-control" name="password" placeholder="Password">
                 <label for="role" class="form-label">Role:</label>
-                <input type="text" class="textfield form-control" name="role" placeholder="Role">
-                <label for="department" class="form-label">Department Id:</label>
-                <input type="text" class="textfield form-control" name="department" placeholder="Department id"><br>
+                <select class="form-select" name="role" aria-label="Default select example">
+                <option >user</option>
+                <option >admin</option>
+</select>
+                <label for="department" class="form-label">Department:</label>
+                <select class="form-select" name="department" aria-label="Default select example">
+                <option value="840">Design</option>
+                <option value="841">Sales</option>
+                <option value="842">Engineering</option>
+                <option value="843">Marketing</option>
+                <option value="844">HR</option>
+                <option value="845">Finance</option>
+</select>
+<br>
                 <button name="submit" class="btn btn-primary">Submit</button>
-                <p>Already a member?<a href="login">Login</a></p>
 </form>
 </div>
 </div>

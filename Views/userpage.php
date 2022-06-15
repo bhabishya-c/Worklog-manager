@@ -1,6 +1,13 @@
 <?php
 require 'style and responsive/responsive.php';
 session_start();
+if(isset($_GET['info'])){
+  if($_GET['info']=='inserted'){
+  echo "<script>alert('Your update has been submitted')</script>";
+}else{
+  echo "<script>alert('Failed to submit update')</script>";
+}
+}
 ?>
 <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style and responsive/style.css">
@@ -10,17 +17,23 @@ session_start();
 <div class="flex-container">
 <div class="card">
   <div class="card-body">
-  <?php
-date_default_timezone_set("Asia/Kathmandu");
-echo "<span style='color:green'>The date and time is: " . date("Y/m/d h:ia");"</span>"
-?>
-<form action="" method="post">
-    <h5> Daily update</h5>
-               <textarea name="update" placeholder="Write your daily update here...."rows="7" cols="75" maxlength="200"></textarea><br><br>
+<form action="userupdatequery" method="post">
+<input type="hidden" class="form-control" name="id" value="<?php echo $_SESSION['id']?>">
+<input type="hidden" class="form-control" name="username" value="<?php echo $_SESSION['name']?>">
+<label for="update" class="form-label">Daily update:</label>
+               <textarea name="update" class="form-control" placeholder="Write your daily update here...."rows="7" cols="78" maxlength="200"></textarea>
+               <label for="date" class="form-label">Date:</label>
+               <input type="date" class="form-control" name="date" value="<?php echo date("Y-m-d");?>"readonly><br>
             <button name="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>
 </div>
 </div>
-
+<br>
+  <form action="userupdatedisplayquery" method="post">
+    <input type="hidden" name="id" value="<?php echo $_SESSION['id']?>">
+<button style="margin-left:530px;"class="btn btn-success">See your daily update</button>
+</form>
+<?php
+?>
 

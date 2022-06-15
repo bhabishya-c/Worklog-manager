@@ -1,5 +1,5 @@
 <?php
 session_start();
 session_destroy();
-header("location:login?info=logout");
+header("location:/?info=logout");
 ?>

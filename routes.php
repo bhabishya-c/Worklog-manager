@@ -1,13 +1,19 @@
 <?php
 $router->define([
-    ''=>'Controller/signuppagecontroller.php',
-    'login'=>'Controller/loginpagecontroller.php',
+    ''=>'Controller/loginpagecontroller.php',
+    'signup'=>'Controller/signuppagecontroller.php',
     'adminpage'=>'Controller/adminpagecontroller.php',
     'userpage'=>'Controller/userpagecontroller.php',
     'signupquery'=>'queries/signupquery.php',
+    'userupdatequery'=>'queries/usersupdatequery.php',
+    'adminupdatedisplayquery'=>'queries/adminupdatedisplayquery.php',
+    'userupdatedisplayquery'=>'queries/userupdatedisplayquery.php',
     'loginquery'=>'queries/loginquery.php',
     'logoutquery'=>'queries/logoutquery.php',
-    'login?info=registered'=>'Controller/loginpagecontroller.php',
-    'login?info=logout'=>'Controller/loginpagecontroller.php'
+    'deletequery'=>'queries/deletequery.php',
+    'userpage?info=inserted'=>'Controller/userpagecontroller.php',
+    'adminpage?info=deleted'=>'Controller/adminpagecontroller.php',
+    '?info=registered'=>'Controller/loginpagecontroller.php',
+    '?info=logout'=>'Controller/loginpagecontroller.php'
 ]);
 ?>
