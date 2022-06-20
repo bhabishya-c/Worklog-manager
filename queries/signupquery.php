@@ -1,4 +1,5 @@
 <?php
+if(isset($_POST['submit'])){
 $name=$_POST['name'];
 $email=$_POST['email'];
 $password=password_hash($_POST['password'],PASSWORD_DEFAULT);
@@ -28,5 +29,5 @@ else{
     $signup=App::get('database');
     $signup->registration($name,$email,$password,$role,$department);
     }
-
+}
 ?>

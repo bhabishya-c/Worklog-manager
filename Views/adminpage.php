@@ -31,7 +31,7 @@ if($adminupdatedisplay){
     <input type="hidden" name="id" value="<?php echo $a['post_id']?>">
     <label for="comment" class="form-label">Comment:</label>
     <textarea name="comment" class="form-control" placeholder="Write your comment here...."rows="5" cols="78" maxlength="200"></textarea><br>
-    <button class="btn btn-primary">Post</button>
+    <button name="post" class="btn btn-primary">Post</button>
     </form>
     </div>
    <?php }
