@@ -6,7 +6,7 @@ $date=$_POST['date'];
 if(empty($update)){
     echo "<script>alert('Update section cannot be empty')</script>";
 }else{
-    $userupdate=require 'db/bootstrap.php';
+    $userupdate=App::get('database');
     $userupdate->update($id,$username,$update,$date);
 }
 ?>

@@ -1,27 +1,16 @@
-<?php
-require 'style and responsive/responsive.php';
- if (isset($_GET['info'])){
-    if($_GET['info']=="registered"){
-        echo"<script>alert('Registered sucessfully')</script>";
-    }
-    elseif($_GET['info']=="logout"){
-        echo"<script>alert('Logged out sucessfully')</script>";
-    }
- else{
-     echo "<script>alert('Failed')</script>";
- }
-}
- ?>
 <!DOCTYPE html>
 <html>
     <head>
         <title>Login Page</title>
+        <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <link  rel="stylesheet" href="style and responsive/style.css">
-</head>
+  </head>
         <body>
-        <div class="parent">
-            <div class="div3"> </div>
-            <div class="div2">
+        <div class="div2">
             <h3>Login</h3>
             <p> Please fill these fields to login into your account</p>
             <form action="loginquery" method="post">
@@ -31,7 +20,6 @@ require 'style and responsive/responsive.php';
                 <input type="password" class="textfield form-control" name="password" placeholder="Password"><br>
                 <button name="login" class="btn btn-primary">Login</button><br>
 </form>
-</div>
 </div>
 </body>
 </html>

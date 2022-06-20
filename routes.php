@@ -4,16 +4,17 @@ $router->define([
     'signup'=>'Controller/signuppagecontroller.php',
     'adminpage'=>'Controller/adminpagecontroller.php',
     'userpage'=>'Controller/userpagecontroller.php',
+    'editpage'=>'Controller/editpagecontroller.php',
     'signupquery'=>'queries/signupquery.php',
     'userupdatequery'=>'queries/usersupdatequery.php',
     'adminupdatedisplayquery'=>'queries/adminupdatedisplayquery.php',
     'userupdatedisplayquery'=>'queries/userupdatedisplayquery.php',
     'loginquery'=>'queries/loginquery.php',
+    'editquery'=>'queries/editquery.php',
     'logoutquery'=>'queries/logoutquery.php',
     'deletequery'=>'queries/deletequery.php',
-    'userpage?info=inserted'=>'Controller/userpagecontroller.php',
-    'adminpage?info=deleted'=>'Controller/adminpagecontroller.php',
-    '?info=registered'=>'Controller/loginpagecontroller.php',
-    '?info=logout'=>'Controller/loginpagecontroller.php'
+    'admincommentquery'=>'queries/admincommentquery.php',
+    'contenttoeditdisplayquery'=>'Controller/editpagecontroller.php',
+    
 ]);
 ?>

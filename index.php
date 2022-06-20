@@ -1,5 +1,5 @@
 <?php 
-require 'Router.php';
+require 'vendor/autoload.php';
 $router=new Router;
 require 'routes.php';
 $uri=trim($_SERVER['REQUEST_URI'],'/');

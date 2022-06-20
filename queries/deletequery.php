@@ -1,5 +1,5 @@
 <?php
     $id=$_POST['id'];
-    $delete= require 'db/bootstrap.php';
+    $delete= App::get('database');
     $delete->delete($id);
 ?>

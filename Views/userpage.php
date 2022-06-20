@@ -1,13 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User Page</title>
+        <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
 <?php
-require 'style and responsive/responsive.php';
 session_start();
-if(isset($_GET['info'])){
-  if($_GET['info']=='inserted'){
-  echo "<script>alert('Your update has been submitted')</script>";
-}else{
-  echo "<script>alert('Failed to submit update')</script>";
-}
-}
 ?>
 <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style and responsive/style.css">
@@ -34,6 +37,6 @@ if(isset($_GET['info'])){
     <input type="hidden" name="id" value="<?php echo $_SESSION['id']?>">
 <button style="margin-left:530px;"class="btn btn-success">See your daily update</button>
 </form>
-<?php
-?>
+</body>
+</html>
 

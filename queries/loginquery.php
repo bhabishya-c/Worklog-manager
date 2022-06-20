@@ -1,4 +1,5 @@
 <?php
+if(isset($_POST['login'])){
     $email=$_POST['email'];
     $password=$_POST['password'];
     if(empty($password) && empty($email)){
@@ -11,9 +12,8 @@
         echo "<script>alert(' Email is required')</script>";
     }
     else{
-        $login= require 'db/bootstrap.php';
+        $login= App::get('database');
         $login->userlogin($email,$password);
-        
     }
-
+}
 ?>

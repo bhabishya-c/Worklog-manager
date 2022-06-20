@@ -25,7 +25,7 @@ elseif(strlen($password)<8|| !$number || !$uppercase || !$lowercase || !$special
 elseif(empty($department)){
         echo"<script>alert('Department id is required')</script>";}
 else{
-    $signup=require "db/bootstrap.php";
+    $signup=App::get('database');
     $signup->registration($name,$email,$password,$role,$department);
     }
 
