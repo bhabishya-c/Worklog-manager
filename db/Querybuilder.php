@@ -1,5 +1,6 @@
 <?php
-// namespace query\db;
+namespace db\query;
+use \PDO;
 session_start();
 class Querybuilder{
     function __construct(protected $connect){
@@ -13,7 +14,7 @@ class Querybuilder{
         }else{
         $preparedregistration=$this->connect->prepare("INSERT INTO userdetails (Name,Email,Password,Role,dept_id) VALUES ('$name','$email','$password','$role','$department')");
         $preparedregistration->execute();
-        header("location:/");
+        header("location:signup");
         }
     }
     function userlogin(string $email,string $password){

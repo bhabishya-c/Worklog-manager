@@ -13,9 +13,9 @@ class ComposerStaticInit040d339cd27b6fc46dccb9d0c1c125ee
         'Composer\\Autoload\\ComposerStaticInit040d339cd27b6fc46dccb9d0c1c125ee' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Pagescontroller' => __DIR__ . '/../..' . '/Controller/Pagescontroller.php',
-        'Querybuilder' => __DIR__ . '/../..' . '/db/Querybuilder.php',
-        'Router' => __DIR__ . '/../..' . '/router.php',
-        'database' => __DIR__ . '/../..' . '/db/databaseconnection.php',
+        'Project3\\router\\Router' => __DIR__ . '/../..' . '/router.php',
+        'db\\connect\\database' => __DIR__ . '/../..' . '/db/databaseconnection.php',
+        'db\\query\\Querybuilder' => __DIR__ . '/../..' . '/db/Querybuilder.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -1,5 +1,5 @@
 <?php
-// namespace page\Controller;
+// namespace Controller\page;
 class Pagescontroller{
     public function admin(){
         require "Views/adminpage.php";

@@ -1,5 +1,5 @@
 <?php
-// namespace router\Project3;
+namespace Project3\router;
 class Router{
     protected $routes=[];
 
@@ -17,6 +17,8 @@ class Router{
         }
 
   function callAction($controller,$action){
+    // $controller="Controller\\page\\{$controller}";
+    // $controller=new $controller;
     if(!method_exists($controller,$action)){
         throw new Exception(
            "{$controller} doesnot respond to the {$action} action."

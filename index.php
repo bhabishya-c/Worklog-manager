@@ -1,5 +1,5 @@
 <?php 
-// use router\Project3\Router;
+use Project3\router\Router;
 require 'vendor/autoload.php';
 $router=new Router;
 require 'routes.php';

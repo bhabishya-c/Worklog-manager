@@ -1,6 +1,5 @@
 <?php
-//require 'db/Querybuilder.php';
-//require 'db/databaseconnection.php';
-
+use db\query\Querybuilder;
+use db\connect\database;
 return new Querybuilder(database::connection());
 ?>

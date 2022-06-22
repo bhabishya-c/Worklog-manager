@@ -12,7 +12,7 @@ return array(
     'Composer\\Autoload\\ComposerStaticInit040d339cd27b6fc46dccb9d0c1c125ee' => $vendorDir . '/composer/autoload_static.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Pagescontroller' => $baseDir . '/Controller/Pagescontroller.php',
-    'Querybuilder' => $baseDir . '/db/Querybuilder.php',
-    'Router' => $baseDir . '/router.php',
-    'database' => $baseDir . '/db/databaseconnection.php',
+    'Project3\\router\\Router' => $baseDir . '/router.php',
+    'db\\connect\\database' => $baseDir . '/db/databaseconnection.php',
+    'db\\query\\Querybuilder' => $baseDir . '/db/Querybuilder.php',
 );

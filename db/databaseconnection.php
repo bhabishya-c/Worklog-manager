@@ -1,5 +1,6 @@
 <?php
-// namespace connect\db;
+namespace db\connect;
+use \PDO;
 class database{
     public static function connection(){
         try{
