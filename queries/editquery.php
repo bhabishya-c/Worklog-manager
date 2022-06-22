@@ -1,4 +1,5 @@
 <?php
+use Project3\app\App;
 $id=$_POST['id'];
 $update=$_POST['update'];
 if(empty($update)){

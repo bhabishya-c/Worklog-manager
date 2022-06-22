@@ -1,4 +1,5 @@
 <?php
+use Project3\app\App;
 if(!isset($_SESSION['loggeddin']) || $_SESSION['loggeddin']!=true){
     header("location:/");
   }

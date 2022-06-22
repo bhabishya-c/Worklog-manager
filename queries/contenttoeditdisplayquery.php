@@ -1,4 +1,5 @@
 <?php
+use Project3\app\App;
 $id=$_POST['id'];
 $date=$_POST['date'];
 if(date('Y-m-d')!=$date){

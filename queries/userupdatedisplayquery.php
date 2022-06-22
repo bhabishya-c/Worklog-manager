@@ -1,4 +1,5 @@
 <?php
+use Project3\app\App;
 if(isset($_POST['submit'])){
 App::get('responsive');
 $id=$_POST['id'];

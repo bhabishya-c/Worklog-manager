@@ -1,4 +1,5 @@
 <?php
+use Project3\app\App;
 $id=$_POST['id'];
 $comment=$_POST['comment'];
 if(empty($comment)){

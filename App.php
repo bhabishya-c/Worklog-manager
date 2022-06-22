@@ -1,5 +1,5 @@
 <?php 
-
+namespace Project3\app;
 class App{
     protected static $registry=[];
     public static function bind($key,$value){
@@ -12,6 +12,7 @@ class App{
         return static::$registry[$key];
     }
 }
+use Project3\app\App;
 App::bind('database',require 'db/bootstrap.php');
 App::bind('responsive',require 'style and responsive/responsive.php');
 ?>

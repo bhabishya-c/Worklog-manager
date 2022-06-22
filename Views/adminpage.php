@@ -10,6 +10,7 @@
 <a href="logoutquery" class="button">Logout</a>
 <a href="signup" class="button">Add user</a>
 <?php
+use Project3\app\App;
 App::get('responsive');
 $display=App::get('database');
 $adminupdatedisplay=$display->adminupdatedisplay('dailyupdate');

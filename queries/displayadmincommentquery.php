@@ -2,6 +2,7 @@
 <link  rel="stylesheet" href="style and responsive/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
 <?php
+use Project3\app\App;
 if(isset($_POST['submit'])){
 $id=$_POST['id'];
 App::get('responsive');
