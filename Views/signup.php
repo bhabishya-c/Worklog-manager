@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['adminloggeddin']) || $_SESSION['adminloggeddin']!=true){
+    header("location:/");
+  }
+?>
 <!DOCTYPE html>
 <html>
     <head>

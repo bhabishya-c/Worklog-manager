@@ -1,4 +1,5 @@
 <?php
+// namespace connect\db;
 class database{
     public static function connection(){
         try{

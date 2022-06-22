@@ -1,42 +1,29 @@
 <?php
+if(isset($_POST['submit'])){
 App::get('responsive');
 $id=$_POST['id'];
 $display=App::get('database');
 $userupdatedisplay=$display->userupdatedisplay($id);
-$admincommentdisplay=$display->commentdisplay($id);
-?>
-<?php 
-if($userupdatedisplay){
+}
+if(!isset($_SESSION['loggeddin']) || $_SESSION['loggeddin']!=true){
+  header("location:/");
+}
+elseif($userupdatedisplay){
   foreach($userupdatedisplay as $u){?>
 <div  style="border-radius:20px;"class="container p-5 my-5 bg-dark text-white">
-<form action="contenttoeditdisplayquery" method='post'>
+<form action="editpage" method='post'>
+    <input type="hidden" name="id" value="<?php echo $u['update_id']?>">
     <input type="hidden" name="date" value="<?php echo $u['date']?>">
-    <input type="hidden" name="id" value="<?php echo $u['post_id']?>">
-  <button style="float:right;"class="btn btn-primary" 
-  <?php if(date("Y-m-d")!=$u['date']){?>
-    disabled
-    <?php }
-    else{?>enable 
-    <?php }?>
-  >Edit</button>
+  <button name="edit" style="float:right;"class="btn btn-primary">Edit</button>
 </form>
     <h1><?php echo $u['name'] ?></h1>
-    <h4><?php echo $u['updates'] ?></h4>
-    <h5><?php echo $u['date']?></h5>
+    <h4>Update: <?php echo $u['updates'] ?></h4>
+    <h5>Date: <?php echo $u['date']?></h5>
     <br>
-<?php
-if($admincommentdisplay){ 
-foreach($admincommentdisplay as $a){?>
-<h4>Comments</h4>
-<h6><?php echo $a['comment']?></h6>
-<?php }
-}else{
-  echo "<div style='margin-top:2%;'class='container'>
-  <div class='alert alert-danger' role='alert'>
-  No comment from admin side till now.
-</div>
-</div>";
-}?>
+    <form action="displayadmincommentquery" method="post">
+    <input type="hidden" name="id" value="<?php echo $u['update_id']?>">
+    <button name="submit" class="btn btn-primary">Show comment</button>
+  </form>
 </div>
 <?php }
 }else{

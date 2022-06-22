@@ -7,7 +7,7 @@ if(!isset($_SESSION['loggeddin']) || $_SESSION['loggeddin']!=true){
 <!DOCTYPE html>
 <html>
     <head>
-        <title>User Page</title>
+        <title>Edit post</title>
         <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,17 +17,14 @@ if(!isset($_SESSION['loggeddin']) || $_SESSION['loggeddin']!=true){
 <link rel="stylesheet" href="style and responsive/style.css">
 </head>
 <body>
-<div class="container-fluid">
-<a href="logoutquery" class="button">Logout</a>
-<h1>Welcome <?php echo $_SESSION['name']?></h1>
+<h1> Edit post</h1>
 <div class="flex-container">
 <div class="card">
   <div class="card-body">
-<form action="userupdatequery" method="post">
-<input type="hidden" class="form-control" name="id" value="<?php echo $_SESSION['id']?>">
-<input type="hidden" class="form-control" name="username" value="<?php echo $_SESSION['name']?>">
+<form action="editquery" method="post">
+<input type="hidden" class="form-control" name="id" value="<?php echo $_SESSION['update_id']?>">
 <label for="update" class="form-label">Daily update:</label>
-               <textarea name="update" class="form-control" placeholder="Write your daily update here...."rows="7" cols="78" maxlength="200"></textarea>
+               <textarea name="update" class="form-control"  placeholder="Write your daily update here...."rows="7" cols="78" maxlength="200"><?php echo $_SESSION['update']?></textarea>
                <label for="date" class="form-label">Date:</label>
                <input type="date" class="form-control" name="date" value="<?php echo date("Y-m-d");?>"readonly><br>
             <button name="submit" class="btn btn-primary">Submit</button>
@@ -35,11 +32,5 @@ if(!isset($_SESSION['loggeddin']) || $_SESSION['loggeddin']!=true){
 </div>
 </div>
 </div>
-<br>
-  <form action="userupdatedisplayquery" method="post">
-    <input type="hidden" name="id" value="<?php echo $_SESSION['id']?>">
-<button name ="submit" style="margin-left:530px;"class="btn btn-success">See your daily update</button>
-</form>
 </body>
 </html>
-

@@ -1,5 +1,4 @@
 <?php
-if(isset($_POST['post'])){
 $id=$_POST['id'];
 $comment=$_POST['comment'];
 if(empty($comment)){
@@ -8,5 +7,5 @@ if(empty($comment)){
 $admincomment=App::get('database');
 $admincomment->comment($id,$comment);
 }
-}
+
 ?>

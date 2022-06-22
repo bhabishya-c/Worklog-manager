@@ -1,9 +1,11 @@
 <?php
-if(isset($_POST['login'])){
     $email=$_POST['email'];
     $password=$_POST['password'];
     if(empty($password) && empty($email)){
         echo "<script>alert(' All fields are required')</script>";
+    }
+    elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        echo "<script>alert('Invalid email format')</script>";
     }
     elseif(empty($password)){
         echo "<script>alert('Password is required')</script>";
@@ -15,5 +17,5 @@ if(isset($_POST['login'])){
         $login= App::get('database');
         $login->userlogin($email,$password);
     }
-}
+
 ?>

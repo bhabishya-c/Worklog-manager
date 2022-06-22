@@ -9,26 +9,28 @@
 <body>
 <a href="logoutquery" class="button">Logout</a>
 <a href="signup" class="button">Add user</a>
-<h1>Welcome Admin</h1>
-
 <?php
 App::get('responsive');
 $display=App::get('database');
 $adminupdatedisplay=$display->adminupdatedisplay('dailyupdate');
+if(!isset($_SESSION['adminloggeddin']) || $_SESSION['adminloggeddin']!=true){
+  header("location:/");
+}
 ?>
+<h1>Welcome <?php echo $_SESSION['name'] ?></h1>
 <?php 
 if($adminupdatedisplay){
   foreach($adminupdatedisplay as $a){?>
 <div class="container p-5 my-5 bg-dark text-white">
 <form action="deletequery" method='post'>
-    <input type="hidden" name="id" value="<?php echo $a['post_id']?>">
+    <input type="hidden" name="id" value="<?php echo $a['update_id']?>">
   <button style="float:right;"class="btn btn-primary">Delete</button>
 </form>
     <h1><?php echo $a['name'] ?></h1>
-    <h4><?php echo $a['updates'] ?></h4>
-    <h5><?php echo $a['date']?></h5>
+    <h4>Update: <?php echo $a['updates'] ?></h4>
+    <h5>Date: <?php echo $a['date']?></h5>
     <form action="admincommentquery" method="post">
-    <input type="hidden" name="id" value="<?php echo $a['post_id']?>">
+    <input type="hidden" name="id" value="<?php echo $a['update_id']?>">
     <label for="comment" class="form-label">Comment:</label>
     <textarea name="comment" class="form-control" placeholder="Write your comment here...."rows="5" cols="78" maxlength="200"></textarea><br>
     <button name="post" class="btn btn-primary">Post</button>
